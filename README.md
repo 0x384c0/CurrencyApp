@@ -8,6 +8,8 @@ A sample darwin app that simulates currency convertion between accounts
 ### Build Requirements
 - Xcode 14
 
+# App architecture
+
 ### Modules
 App has single feature - Currency conversion\
 Feature split in to 3 modules
@@ -22,8 +24,17 @@ Feature split in to 3 modules
 - Layes implemented by [Clear Architectue Guide](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - UI layer has MVVM achitecture
 - [Domain](/Domain) knows nothing about other layers
-- Layers can communicate between each other only via exposed Protocols. [Example Protocol](/Domain/Sources/Domain/interactors/CurrencyExchangeInteractor.swift)
+- Layers can communicate between each other only via exposed Protocols. [Injection exmple](/PresentationIOS/PresentationIOS/PresentationIOSApp.swift#L22)
 - Implementations of layer protocols are injected using library Swinject.
+
+### Communication between layers
+1. UI [ConverterView](/PresentationIOS/PresentationIOS/ui/ConverterView.swift) calls functions from [ConverterViewModel](PresentationIOS/PresentationIOS/ui/ConverterViewModel.swift).
+1. ViewModel executes Use cases from [Interactor](/Domain/Sources/Domain/interactors/CurrencyExchangeInteractorImpl.swift).
+1. Use case obtains data from [DataSource](Data/Sources/Data/datasource/CurrencyRemoteDataSourceImpl.swift)
+1. Repository returns data from a [EvpApi](/Data/Sources/Data/api/EvpApi.swift).
+1. Information flows back to the UI to be displayed.
+
+# Addition of a new functionality
 
 ### Adding new Currencies
 - add new case in to [CurrencyModel](/Domain/Sources/Domain/data/CurrencyModel.swift)
@@ -33,12 +44,7 @@ Feature split in to 3 modules
 - create new implementation of [FeeRule](Domain/Sources/Domain/interactors/feeRules/FeeRule.swift)
 - add created rule implementation in to [DomainConfig.getAllFees()](/Domain/Sources/Domain/DomainConfig.swift#L23)
 
-### Communication between layers
-1. UI [ConverterView](/PresentationIOS/PresentationIOS/ui/ConverterView.swift) calls functions from [ConverterViewModel](PresentationIOS/PresentationIOS/ui/ConverterViewModel.swift).
-1. ViewModel executes Use cases from [Interactor](/Domain/Sources/Domain/interactors/CurrencyExchangeInteractorImpl.swift).
-1. Use case obtains data from [DataSource](Data/Sources/Data/datasource/CurrencyRemoteDataSourceImpl.swift)
-1. Repository returns data from a [EvpApi](/Data/Sources/Data/api/EvpApi.swift).
-1. Information flows back to the UI to be displayed.
+# Project development notes
 
 ### Dependencies and Frameworks
 1. [SwiftUI](https://developer.apple.com/xcode/swiftui/)
@@ -50,7 +56,7 @@ Feature split in to 3 modules
 - [Currency conversion use cases](/Domain/Tests/DomainTests/CurrencyExchangeInteractorImplTests.swift)
 - [Account use cases](/Domain/Tests/DomainTests/AccountsInteractorMockImplTests.swift)
 - [Transaction history use cases](/Domain/Tests/DomainTests/HistoryInteractorMockImplTests.swift)
-- Note: test can be executed automatically using [Github Actions](/.github/workflows/build-darwin.yml)
+- Note: test can be executed automatically using [Github Actions](https://github.com/0x384c0/CurrencyApp/actions/workflows/build-darwin.yml)
 
 ### Estimated time spent
 |Task|Time (hours)|
