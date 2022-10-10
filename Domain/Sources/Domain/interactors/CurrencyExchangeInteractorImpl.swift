@@ -94,10 +94,7 @@ class CurrencyExchangeInteractorImpl: CurrencyExchangeInteractor {
         sellAmount:Double,
         transactionCount:Int
     ) -> [FeeRule] {
-        [
-            ConversionFeeRule(sellAmount:sellAmount),
-            TransactionCountFeeRule(transactionCount:transactionCount)
-        ]
+        DomainConfig.getAllFees(sellAmount: sellAmount, transactionCount: transactionCount)
             .filter{$0.isActive}
     }
 }

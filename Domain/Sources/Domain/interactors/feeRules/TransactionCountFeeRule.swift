@@ -7,14 +7,13 @@
 
 import Foundation
 
-/// makes first 5 transaction free
+/// makes first N transaction free
 class TransactionCountFeeRule:FeeRule {
-    //MARK: Constants
-    private let FREE_TRANSACTIONS = 5
-
     //MARK: Init
+    private let freeTransactions:Int
     private let transactionCount:Int
-    init(transactionCount: Int) {
+    init(freeTransactions:Int,transactionCount: Int) {
+        self.freeTransactions = freeTransactions
         self.transactionCount = transactionCount
     }
 
@@ -22,6 +21,6 @@ class TransactionCountFeeRule:FeeRule {
     var isFree = true
     var amount: Double = 0
     var isActive:Bool {
-        transactionCount <= FREE_TRANSACTIONS
+        transactionCount <= freeTransactions
     }
 }

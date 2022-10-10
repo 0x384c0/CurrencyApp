@@ -9,11 +9,7 @@ import Combine
 
 class AccountsInteractorMockImpl: AccountsInteractor{
 
-    private var accounts = [
-        CurrencyModel.EUR : AccountModel(amount: 1000, currency: .EUR),
-        CurrencyModel.USD : AccountModel(amount: 0, currency: .USD),
-        CurrencyModel.JPY : AccountModel(amount: 0, currency: .JPY)
-    ]
+    private var accounts = DomainConfig.getInitialAccountState()
 
     func getAccounts() -> AnyPublisher<[AccountModel], Error> {
         Just(Array(accounts.values))

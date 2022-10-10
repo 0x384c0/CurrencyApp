@@ -87,7 +87,7 @@ final class CurrencyExchangeInteractorImplTests: BaseXCTestCase<CurrencyExchange
         XCTAssertEqual(currencies?.sellCurrency, CurrencyModel.EUR)
         XCTAssertEqual(currencies?.receiveAmount, 15)
         XCTAssertEqual(currencies?.receiveCurrency, CurrencyModel.USD)
-        XCTAssertEqual(currencies?.feeAmount, 10 * 0.7)
+        XCTAssertEqual(currencies?.feeAmount, 10 * 0.007)
     }
 
     func testSubmitExchangeFailed() throws {

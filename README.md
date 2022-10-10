@@ -1,7 +1,7 @@
 # Currency App
 A sample darwin app that simulates currency convertion between accounts
 
-![tests workflow](https://github.com/0x384c0/CurrencyApp/actions/workflows/build-darwin.yml/badge.svg)
+[![tests workflow](https://github.com/0x384c0/CurrencyApp/actions/workflows/build-darwin.yml/badge.svg)](https://github.com/0x384c0/CurrencyApp/actions/workflows/build-darwin.yml)
 
 <img src="/media/ffmpeg_out_white.gif"> <img src="/media/ffmpeg_out_dark.gif">
 
@@ -27,11 +27,11 @@ Feature split in to 3 modules
 
 ### Adding new Currencies
 - add new case in to [CurrencyModel](/Domain/Sources/Domain/data/CurrencyModel.swift)
-- add account with new currency in to [AccountsInteractorMockImpl.accounts](/Domain/Sources/Domain/interactors/AccountsInteractorMockImpl.swift#L12) 
+- add account with new currency in to [DomainConfig.getInitialAccountState()](/Domain/Sources/Domain/DomainConfig.swift#L15) 
 
 ### Adding new Comission rules
 - create new implementation of [FeeRule](Domain/Sources/Domain/interactors/feeRules/FeeRule.swift)
-- add created rule implementation in to [CurrencyExchangeInteractorImpl.getActiveFees()](/Domain/Sources/Domain/interactors/CurrencyExchangeInteractorImpl.swift#L97)
+- add created rule implementation in to [DomainConfig.getAllFees()](/Domain/Sources/Domain/DomainConfig.swift#L23)
 
 ### Communication between layers
 1. UI [ConverterView](/PresentationIOS/PresentationIOS/ui/ConverterView.swift) calls functions from [ConverterViewModel](PresentationIOS/PresentationIOS/ui/ConverterViewModel.swift).

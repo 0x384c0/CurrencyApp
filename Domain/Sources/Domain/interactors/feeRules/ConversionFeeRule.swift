@@ -7,21 +7,20 @@
 
 import Foundation
 
-/// adds 0.7% of transfer amount to transaction
+/// adds some percent of transfer amount fee to transaction
 class ConversionFeeRule:FeeRule{
-    //MARK: Constants
-    private let FEE_RATE = 0.007
-
     //MARK: Init
+    private let feeRate:Double
     private let sellAmount:Double
-    init(sellAmount: Double) {
+    init(feeRate:Double, sellAmount: Double) {
+        self.feeRate = feeRate
         self.sellAmount = sellAmount
     }
 
     //MARK: FeeRule
     var isFree = false
     var amount: Double {
-        sellAmount * FEE_RATE
+        sellAmount * feeRate
     }
     var isActive:Bool {
         true
