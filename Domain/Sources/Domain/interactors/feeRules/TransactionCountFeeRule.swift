@@ -7,7 +7,7 @@
 
 import Foundation
 
-///TODO: doc
+/// makes first 5 transaction free
 class TransactionCountFeeRule:FeeRule {
     //MARK: Constants
     private let FREE_TRANSACTIONS = 5

@@ -7,10 +7,10 @@
 
 import Foundation
 
-///TODO: doc
+/// adds 0.7% of transfer amount to transaction
 class ConversionFeeRule:FeeRule{
     //MARK: Constants
-    private let FEE_RATE = 0.7
+    private let FEE_RATE = 0.007
 
     //MARK: Init
     private let sellAmount:Double

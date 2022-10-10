@@ -23,8 +23,5 @@ let package = Package(
             dependencies: [
                 "Swinject",
             ]),
-        .testTarget(
-            name: "CommonTests",
-            dependencies: ["Common"]),
     ]
 )

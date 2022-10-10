@@ -27,8 +27,5 @@ let package = Package(
                 "Domain",
                 "Common",
             ]),
-        .testTarget(
-            name: "DataTests",
-            dependencies: ["Data"]),
     ]
 )
