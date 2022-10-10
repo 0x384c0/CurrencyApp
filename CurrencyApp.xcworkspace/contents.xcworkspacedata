@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:PresentationIOS/PresentationIOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PresentationIOS/../Domain">
+   </FileRef>
+   <FileRef
+      location = "group:Data">
+   </FileRef>
+   <FileRef
+      location = "group:Common">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+</Workspace>

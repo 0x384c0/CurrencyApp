@@ -1,0 +1,22 @@
+/* 
+ Localizable.strings
+ PresentationIOS
+
+ Created by 0x384c0 on 9/10/22.
+
+ */
+
+"MY_BALANCES" = "MY BALANCES";
+"CURRENCY_EXCHANGE" = "CURRENCY EXCHANGE";
+"SUBMUT" = "SUBMUT";
+"SUCCSESS_ALERT_TITLE" = "Currency converted";
+"SUCCSESS_ALERT_MESSAGE" = "You have converted %.2f %@ to %.2f %@. Comission Fee - %.2f %@.";
+"CURRENCY_CONVERTER" = "Currency converter";
+"SELECT_CURRENCY_FOR" = "Select currency for";
+"SELL" = "Sell";
+"RECEIVE" = "Receive";
+"ERROR_ALERT_TITLE" = "An error has occured";
+"NETWORK_ERROR" = "Network error";
+"UNKNOWN_ERROR" = "Unknown error";
+"NOT_ENOUG_FUNDS" = "Not enoug funds";
+"TEST_ERROR" = "You Must Construct Additional Pylons";
