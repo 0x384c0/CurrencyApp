@@ -7,6 +7,11 @@ jobs:
   tests:
     runs-on: macos-latest
     steps:
+      - name: Install Swift
+        uses: slashmo/install-swift@v0.2.1
+        with:
+          version: 5.7
+          
       - name: Checkout repository
         uses: actions/checkout@v3
 
