@@ -1,3 +1,3 @@
 # Data
 
-A description of this package.
+Contains Data layer with REST API requests.

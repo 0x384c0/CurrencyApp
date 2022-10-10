@@ -1,3 +1,3 @@
 # Domain
 
-A description of this package.
+Contains Domain layer with business logic.
