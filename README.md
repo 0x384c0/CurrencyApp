@@ -72,3 +72,4 @@ Feature split in to 3 modules
 - add loading indicators
 - add swiftlint
 - add ui tests
+- use [dedicated data mappers](https://medium.com/jesus-medina/mapping-data-between-layers-db8ad93f0f8f) for each layer instead of protocol inheritance 
